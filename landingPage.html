@@ -2,29 +2,93 @@
     <head>
         <title> FinSpace </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     </head>
     <body>
         <div name="mainContainer">
-            <nav name="appNavBar" class="navbar navbar-expand-lg navbar-light bg-light">
-                <a name="appNameContainer" class="navbar-brand">
-                    FinSpace
-                </a>
+<!--             <nav name="appNavBar" class="navbar navbar-expand-lg navbar-light bg-light">
+                <span name="appNameContainer" class="navbar-brand">FinSpace</span>
                 <button class="btn btn-outline-success m-1">Profile</button>
+            </nav> -->
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+            <div style="width: 100%;">
+              <!-- Navbar brand -->
+              <a class="navbar-brand" href="#">FinSpace</a>
+              <span>
+                <i class="fas fa-user-circle" style="color: white; float: right; font-size: 1.25rem; padding: 8;"></i>
+                <i class="fas fa-envelope" style="color: white; float: right; font-size: 1.25rem; padding: 8;"></i>
+              </span>
+            </div>
+              
+
             </nav>
-            <div name="contentContainer">
-                <div name="searchBarContainer">
-                    <div name="searchInputContainer">
+            <!--/.Navbar-->
 
-                    </div>
-                    <div name="searchToggleContainer">
 
+            <div class="container" name="contentContainer" style="margin-top: 7rem;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div name="searchBarContainer">
+                            <div name="searchInputContainer">
+                                <!-- Search form -->
+                                <form class="form-inline active-cyan-4">
+                                  <input class="form-control form-control-sm w-75" type="text" placeholder="Interest" aria-label="Interest" style="margin-right: -2rem!important;">
+                                  <i class="fas fa-search" aria-hidden="true"></i>
+                                </form>
+                            </div>
+                            <div name="searchToggleContainer">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div name="portraitContainer">
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Default switch -->
+                        <span class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="nameSwitch">
+                          <label class="custom-control-label" for="nameSwitch">Name</label>
+                        </span>
+                    </div>
 
+                    <div class="col-md-4">
+                        <span class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="marketSwitch">
+                          <label class="custom-control-label" for="marketSwitch">Market</label>
+                        </span>
+                    </div>
+
+                    <div class="col-md-4">
+                        <span class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="interestSwitch">
+                          <label class="custom-control-label" for="interestSwitch">Interest</label>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div name="portraitContainer">
+
+                    </div>
                 </div>
             </div>
         </div>
