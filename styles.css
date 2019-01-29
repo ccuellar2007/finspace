@@ -1,0 +1,44 @@
+.profile-list-container{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.portrait-container{
+    padding: 5;
+    margin: 25;
+    display: flex;
+    flex-direction: column;
+}
+.portrait-name{
+    flex: 1;
+    display: flex;
+    margin: auto;
+}
+.portrait-name-text{
+    flex:1;
+}
+.portrait-image{
+    flex: 4;
+}
+.full-width{
+    width: 100%;
+}
+.top-button-container{
+    display:block;
+}
+.back-button{
+    float: left;
+}
+.message-button{
+    float: right;
+}
+.profile-info{
+    margin: auto;
+    display: block;
+}
+.profile-info-text{
+    text-align: center;
+}
