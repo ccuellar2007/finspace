@@ -76,4 +76,51 @@ class InterestList {
         });
     }
 }
+
+class MetaInfo{
+    constructor(){
+        this.editButton = $('#edit-button');
+        this.nameText = $('#name-text');
+        this.nameInput = $('#name-input');
+        this.cityText = $('#city-text');
+        this.cityInput = $('#city-input');
+        this.cohortText = $('#cohort-text');
+        this.cohortInput = $('#cohort-input');
+        this.isEditable = false;
+        this.editButton.on('click',this.toggleEdit.bind(this));
+        window.onkeydown = (event)=>{
+            (event.keyCode===13 && this.isEditable) ? this.toggleEdit() : null 
+        }
+        console.log(this.editButton);
+    }
+
+    toggleEdit(){
+        if(this.isEditable){
+            this.nameText.html(this.nameInput.val());
+            this.cityText.html(this.cityInput.val());
+            this.cohortText.html(this.cohortInput.val());
+
+            this.nameInput.addClass('invisible');
+            this.cityInput.addClass('invisible');
+            this.cohortInput.addClass('invisible');
+            this.nameText.removeClass('invisible');
+            this.cityText.removeClass('invisible');
+            this.cohortText.removeClass('invisible');
+        } else {
+            this.nameInput.val(this.nameText.html());
+            this.cityInput.val(this.cityText.html());
+            this.cohortInput.val(this.cohortText.html());
+
+            this.nameText.addClass('invisible');
+            this.cityText.addClass('invisible');
+            this.cohortText.addClass('invisible');
+            this.nameInput.removeClass('invisible');
+            this.cityInput.removeClass('invisible');
+            this.cohortInput.removeClass('invisible');
+        }
+        this.isEditable = !this.isEditable;
+    }
+
+}
 var interestList = new InterestList();
+var metainfo = new MetaInfo();

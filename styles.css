@@ -63,11 +63,11 @@
 .top-button-container{
 }
 .back-button{
-    position: absolute;
+    position: fixed;
     left: 5;
 }
 .message-button{
-    position: absolute;
+    position: fixed;
     right: 5;
 }
 .profile-info{
@@ -222,4 +222,18 @@ div.foo{
     rotateY(40deg)
     rotateZ(0deg)
     skew(0deg,22deg);
+}
+
+.invisible{
+    display: none!important;
+}
+.block{
+    display: block;
+}
+.profile-edit-button{
+    margin-left:5px;
+}
+.profile-info-input{
+    display: block;
+    margin: auto;
 }
