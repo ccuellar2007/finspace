@@ -48,7 +48,7 @@ class InterestList {
 
     handleDropdownSelection(event){
         this.interestList.push(event.target.innerHTML);
-        addInterestToPage(event.target.innerHTML,this.interestList.length+1);
+        this.addInterestToPage(event.target.innerHTML,this.interestList.length+1);
         this.hideDropdown();
     
     }
