@@ -36,6 +36,13 @@
     transform: translate(-50%, -50%);
     display: none;
     text-align: center;
+    width: 225px;
+    height: 225px;
+    border-radius: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 11;
 }
 
 .full-width{
