@@ -61,13 +61,14 @@
     width: 100%;
 }
 .top-button-container{
-    display:block;
 }
 .back-button{
-    float: left;
+    position: fixed;
+    left: 5;
 }
 .message-button{
-    float: right;
+    position: fixed;
+    right: 5;
 }
 .profile-info{
     margin: auto;
@@ -75,6 +76,20 @@
 }
 .profile-info-text{
     text-align: center;
+    margin-bottom: 1px;
+}
+.interest-info-container{
+    background-color: '#e0e0e0'
+}
+.interest-list-container{
+    border-color: transparent;
+}
+.interest-list-icon{
+    padding-right: 5px;
+}
+.interest-list-text{
+    margin:auto;
+    text-align:center;
 }
 
 .navbar {
@@ -207,4 +222,18 @@ div.foo{
     rotateY(40deg)
     rotateZ(0deg)
     skew(0deg,22deg);
+}
+
+.invisible{
+    display: none!important;
+}
+.block{
+    display: block;
+}
+.profile-edit-button{
+    margin-left:5px;
+}
+.profile-info-input{
+    display: block;
+    margin: auto;
 }

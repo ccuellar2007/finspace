@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title> FinSpace </title>
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
+        <!-- MDB core JavaScript -->
+        <link rel="stylesheet" type="text/css" href="styles.css"> 
+    </head>
+    <body>
+        <div name="topButtonsContainer" class="top-button-container p-3 row">
+            <div class="col-6">
+                    <a href="./landingPage.html">
+                    <i class="fas fa-angle-left fa-3x back-button blue-text"></i>
+                </a>
+            </div>
+            <div class="col-6">
+                <i class="fas fa-edit fa-3x blue-text message-button" id="edit-button"></i>
+            </div>
+        </div>
+        <div name="profileInfoContainer">
+                <div class="profile-info row">
+                    <div class="col-12">
+                            <img src="https://cdn5.vectorstock.com/i/1000x1000/72/59/female-avatar-profile-icon-round-african-american-vector-18307259.jpg" class="rounded-circle profile-info" height=200 width=200>
+                    </div>
+                </div>
+                <div class="profile-info row">
+                    <div class="col-12">
+                            <p class="text-muted profile-info-text" id="name-text">FirstName LastName</p>
+                            <input class="text-muted profile-info-text profile-info-input invisible" id="name-input">
+                            <p class="text-muted profile-info-text" id="city-text">Dallas, TX</p>
+                            <input class="text-muted profile-info-text profile-info-input invisible" id="city-input">
+                            <p class="text-muted profile-info-text" id="cohort-text">C1</p>
+                            <input class="text-muted profile-info-text profile-info-input invisible" id="cohort-input">
+                    </div>
+                </div>
+        </div>
+        <div name="interestInfoContainer" class="jumbotron interest-info-container m-3">
+            <div class="row">
+                <div class="col-2">
+                        <h1 class="display"> Interests </h1>
+                </div>
+                <div class="col-10">
+                     <button class="btn btn-primary" id="show-dropdown">
+                        Add an Interest
+                     </button>
+                     <!--Dropdown danger-->
+                    <div id="dropdown-container" style="display: none">
+                    <div class="dropdown">
+                    <!--Trigger-->
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="interest-select-menu-open" data-toggle="dropdown">
+                            Interests
+                        </button>
+                    
+                        <!--Menu-->
+                        <div class="dropdown-menu" id="interest-select-menu">
+                            <button class="dropdown-item" id="books-dropdown-item">Books</button>
+                            <button class="dropdown-item" id="fishing-dropdown-item">Fishing</button>
+                            <button class="dropdown-item" id="gaming-dropdown-item">Gaming</button>
+                            <button class="dropdown-item" id="basketball-dropdown-item">Basketball</button>
+                            <button class="dropdown-item" id="art-dropdown-item">Art</button>
+                            <button class="dropdown-item" id="music-dropdown-item">Music</button>
+                            <button class="dropdown-item" id="football-dropdown-item">Football</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-6">
+                    <ul class="list-group list-group-flush interest-list-container" id="interest-list-1">
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group list-group-flush interest-list-container" id="interest-list-2">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
+        <script type="text/javascript" src="editProfile.js"></script>
+    </body>
+</html>
