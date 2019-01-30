@@ -2,6 +2,14 @@
     background-color: #4fc3f7
 }*/
 
+/*Trying some crazy slideshow shit for the login screen*/
+
+
+
+
+
+/*Trying some crazy slideshow shit for the login screen*/
+
 .profile-list-container{
     display: flex;
     flex-wrap:wrap;
@@ -67,6 +75,10 @@
 }
 .profile-info-text{
     text-align: center;
+}
+
+.navbar {
+    opacity: 0.9;
 }
 
 .navbar-content-wrapper {
