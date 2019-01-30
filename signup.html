@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Signup</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+<!-- 		<link rel="stylesheet" type="text/css" href="{% static '/cook/vendor/bootstrap/css/bootstrap.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static '/cook/css/main.css' %}" /> -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" />
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+        <script type="text/javascript" src="{% static '/cook/vendor/paper/paper-full.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<style>
+            body {
+/*                height: 500px;
+                background-image:url("https://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/4hjh3kj634.png?itok=BpLwPYey&resize=1100x1100");
+                background-size: 120%;
+                background-repeat: no-repeat;
+                background-position: center; */
+                
+            }
+            #box {
+                margin-top: 15%;
+                width: 40%;
+                border: none;
+                background-color: rgba(68,167,208 ,0.9);
+                border-radius: 10;
+            }
+            #heading {
+                margin-top: 3%;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                color: white;
+            }
+            #logo{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 60%;
+                border-radius: 10;
+            }
+            #button {
+                width: 100%;
+                background-color: white;
+                color: #76b6c9;
+            }
+            /* #username {
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-radius: 0;
+                border-bottom: 2px solid #76b6c9;
+                background: none;
+            } */
+            #box{
+                margin-bottom: 0;
+            }
+            #secondBox {
+                margin-top: 0.5%;
+                width: 30%;
+                border: none;
+                background-color: rgba(68,167,208 ,0.9);
+                border-radius: 10;
+            }
+            #secondBox h5{
+                margin-top: 0;
+            }
+            #access {
+                border: 1.5px solid white;
+                background-color: rgba(255,255,255 ,0.25);
+                color: white;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            #username {
+                border: 1.5px solid white;
+                background-color: rgba(255,255,255 ,0.25);
+                color: white;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            #password {
+                border: 1.5px solid white;
+                background-color: rgba(255,255,255 ,0.25);
+                color: white;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            input::-webkit-input-placeholder {
+                color: white !important;
+                font-size: 11pt;
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+            #button {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 13pt;
+                width: 50%;
+                margin: auto;
+                padding: 7px;
+                text-transform: uppercase;
+                display: block;
+            }
+            .other-options {
+                color: white;
+            }
+            
+		</style>
+	</head>
+	<body>
+
+        <div id="box" class="ui text container segment">
+<!--             <img id="logo"src="https://pbs.twimg.com/profile_images/869672766726746112/HcOfk8nf_400x400.jpg"> -->
+            <form action='/cook/process/' method='post' class="ui equal width form">
+ <!--                    <h1 id="heading" class="ui center aligned header"> FinSpace</h1>
+                    <h5 id="heading" class="ui center aligned header">Welcome! Let's start connecting you with other Fins!</h5> -->
+                    <input name='type' type='hidden' value='CREATE_USER'>
+                    
+                    <div class="field">
+                        <div class="ui left icon input">      
+                         <input id="access" type="text" placeholder="Your access code" name="access">
+                                <i class="envelope icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                            <div class="ui left icon input">
+                                    <input id="username" type="text" placeholder="Your username" name="username">
+                                    <i class="user icon"></i>
+                            </div>
+                    </div>
+
+                    <div class="field">
+                            <div class="ui left icon input">
+                                    <input id="password" type="password" placeholder="Your password" name="password">
+                                    <i class="lock icon"></i>
+                            </div>
+                    </div>
+                    <button id="button" class= "ui button">Sign up</button>
+            </form>
+        </div>
+<!--         <div id="secondBox" class="ui text container segment">
+            <h5 id="heading" class="ui center aligned header"><a class='other-options' href='/cook/signin'>Do you need to create an account?</a></h5>
+        </div> -->
+
+<!--         <script>
+            $(document).ready(function() {
+                $('button').click(function() {
+                    var msg = {
+                        'username': $("#username").val()
+                    }
+                .ajax
+                });
+            });
+        </script> -->
+	</body>
+</html>
