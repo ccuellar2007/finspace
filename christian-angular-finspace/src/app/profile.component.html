@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div name="topButtonsContainer" class="top-button-container p-3 row">
+    <div class="col-1">
+            <i class="fas fa-angle-left fa-3x back-button blue-text"></i>
+    </div>
+    <div class="col-10">
+    </div>
+    <div class="col-1" *ngIf="personalProfile">
+        <i class="fas fa-edit fa-3x blue-text message-button" id="edit-button" (click)="toggleEditable()"></i>
+    </div>
+</div>
+<div name="profileInfoContainer">
+        <div class="profile-info row">
+            <div class="col-12">
+                    <img src="https://cdn5.vectorstock.com/i/1000x1000/72/59/female-avatar-profile-icon-round-african-american-vector-18307259.jpg" class="rounded-circle profile-info" height=200 width=200>
+            </div>
+        </div>
+        <div class="profile-info row">
+            <div class="col-12">
+                    <p class="text-muted profile-info-text" id="name-text" *ngIf="!isEditable">{{nameInput}}</p>
+                    <input class="text-muted profile-info-text profile-info-input" *ngIf="isEditable" id="name-input" [(ngModel)]="nameInput">
+                    <p class="text-muted profile-info-text" id="city-text" *ngIf="!isEditable" >{{cityInput}}</p>
+                    <input class="text-muted profile-info-text profile-info-input" *ngIf="isEditable" id="city-input" [(ngModel)]="cityInput">
+                    <p class="text-muted profile-info-text" id="cohort-text" *ngIf="!isEditable">{{cohortInput}}</p>
+                    <input class="text-muted profile-info-text profile-info-input" id="cohort-input" *ngIf="isEditable" [(ngModel)]="cohortInput">
+            </div>
+        </div>
+</div>
+<app-interest-list-component [interestList]="interestList" [personalProfile]="personalProfile"></app-interest-list-component>
+
+<router-outlet></router-outlet>
