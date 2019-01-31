@@ -1,0 +1,44 @@
+<div name="interestInfoContainer" class="jumbotron interest-info-container m-3">
+    <div class="row">
+        <div class="col-2">
+                <h1 class="display"> Interests </h1>
+        </div>
+        <div class="col-5">
+
+        </div>
+        <div class="col-1" *ngIf="personalProfile">
+            <mat-form-field class="profile-interest-dropdown">
+              <mat-select [placeholder]="dropdownText" [(value)]="dropdownValue">
+                <mat-option *ngFor="let interest of interests" [value]="interest">
+                  {{interest.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col-1" *ngIf="personalProfile">
+            <button mat-raised-button class="save-interest-button" (click)="addInterest(dropdownValue)">Save New Interest</button>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-6">
+            <ul class="list-group list-group-flush interest-list-container" id="interest-list-1">
+                <li class="list-group-item" *ngFor="let interest of getLeftInterestList()" [value]="interest">
+                    <i class="fas fa-{{interest.iconName}} fa-3x interest-list-icon {{interest.color}}-text"></i>
+                    <span class="interest-list-text">{{interest.name}}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="col-6">
+            <ul class="list-group list-group-flush interest-list-container" id="interest-list-2">
+                <li class="list-group-item" *ngFor="let interest of getRightInterestList()" [value]="interest">
+                    <i class="fas fa-{{interest.iconName}} fa-3x interest-list-icon {{interest.color}}-text"></i>
+                    <span class="interest-list-text">{{interest.name}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

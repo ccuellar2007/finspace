@@ -1,0 +1,48 @@
+<div>
+<div class="row">
+    <div class="col-2">
+        <span style="visibility:hidden;"class="badge badge-pill badge-primary">buffer</span>
+    </div>
+    <div class="col-2">
+        <span class="badge badge-pill badge-primary" *ngIf="isNameFilterNotEmpty()">{{nameFilter}}</span>
+        <span class="badge badge-pill badge-primary" *ngIf="isMarketFilterNotEmpty()">{{marketFilter}}</span>
+        <span class="badge badge-pill badge-primary" *ngIf="isInterestFilterNotEmpty()">{{interestFilter}}</span>
+    </div>
+    
+</div>
+<div class="row">
+        <div class="col-md-12">
+            <div name="searchInputContainer">
+                    <input type="text" placeholder="Pick one" aria-label="Number" matInput class="search-bar form-control form-control-sm w-75" [matAutocomplete]="auto" [(ngModel)]="currentSearch">
+                    <mat-autocomplete #auto="matAutocomplete" >
+                      <mat-option *ngFor="let option of getOptions()" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+            </div>
+        </div>
+    </div>
+<div class="row filter-row">
+    <div class="col-md-4">
+        <!-- Default switch -->
+        <span class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="nameSwitch" [checked]="isNameToggled()" (change)="toggleName()">
+            <label class="custom-control-label" for="nameSwitch">Name</label>
+        </span>
+    </div>
+
+    <div class="col-md-4">
+        <span class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="marketSwitch" [checked]="isMarketToggled()" (change)="toggleMarket()">
+            <label class="custom-control-label" for="marketSwitch">Market</label>
+        </span>
+    </div>
+
+    <div class="col-md-4">
+        <span class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="interestSwitch" [checked]="isInterestToggled()" (change)="toggleInterest()">
+            <label class="custom-control-label" for="interestSwitch">Interest</label>
+        </span>
+    </div>
+</div>
+</div>
