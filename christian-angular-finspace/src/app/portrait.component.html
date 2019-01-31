@@ -1,0 +1,4 @@
+<div (mouseover)="showText()" (mouseout)="hideText()" name="portraitContainer" class="portrait-container">
+  <img [src]='imgSrc' class="rounded-circle portrait-image" height=225 width=225>
+  <app-profile-text-component [visiblity]='state' [name]='childName'></app-profile-text-component>
+</div>
