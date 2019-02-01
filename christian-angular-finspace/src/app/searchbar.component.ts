@@ -1,4 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+class Filter {
+  nameFilter: string;
+  marketFilter: string;
+  interestFilter: string;
+}
 @Component({
   selector: 'app-search-bar',
   templateUrl: './searchbar.component.html',
@@ -9,13 +14,14 @@ export class SearchBarComponent {
   MARKET_STATE = 'MARKET_STATE';
   INTEREST_STATE = 'INTEREST_STATE';
   currentState = this.NAME_STATE;
-  NAME_OPTIONS = ['Abe', 'Bob', 'Bort', 'Lisa'];
+  NAME_OPTIONS = ['Tristan Miller', 'Christian Cuellar', 'Bilal Sattar', 'Trace Tschida', 'Stephen Godderidge', 'Joel Eliason'];
   MARKET_OPTIONS = ['Dallas', 'Houston', 'SF', 'LA', 'Seattle', 'Chicago', 'Atlanta', 'New York', 'DC', 'Philadelphia'];
   INTEREST_OPTIONS = ['Football', 'Basketball', 'Fishing', 'Art', 'Gaming', 'Music', 'Books'];
   currentSearch = '';
   nameFilter = '';
   marketFilter = '';
   interestFilter = '';
+  @Output() filterChanged = new EventEmitter<Filter>();
   isNameFilterNotEmpty() {
     return (this.nameFilter !== '');
   }
@@ -35,6 +41,14 @@ export class SearchBarComponent {
     return this.currentState === this.INTEREST_STATE;
   }
   getOptions() {
+    switch (this.currentState) {
+      case this.NAME_STATE:
+        this.filterChanged.emit({nameFilter: this.currentSearch, marketFilter: this.marketFilter, interestFilter: this.interestFilter}); break;
+      case this.MARKET_STATE:
+        this.filterChanged.emit({nameFilter: this.nameFilter, marketFilter: this.currentSearch, interestFilter: this.interestFilter}); break;
+      default: break;
+    }
+    
     return this.getOptionsNotFiltered().filter(x => x.indexOf(this.currentSearch) >= 0);
   }
   getOptionsNotFiltered() {

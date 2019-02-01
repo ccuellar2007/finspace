@@ -1,6 +1,6 @@
 <div class="container content-container" name="contentContainer">
-    <app-search-bar></app-search-bar>
-  <app-portrait-list></app-portrait-list>
+    <app-search-bar (filterChanged) = "updateFilter($event)" ></app-search-bar>
+  <app-portrait-list [currentFilter] = "currentFilter"></app-portrait-list>
 </div>
 
 <!-- <div name="profileListContainer" class="profile-list-container">
