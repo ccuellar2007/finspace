@@ -8,7 +8,7 @@ export class ProfileComponent {
   @Input() nameInput = 'Tristan Miller';
   @Input() cityInput = 'Dallas, TX';
   @Input() cohortInput = 'C1';
-  @Input() interestList: Array<string> = ['Fishing', 'Books'];
+  @Input() interestList: Array<string> = [];
   @Input() personalProfile = true;
   title = 'angular-finspace';
   isEditable = false;

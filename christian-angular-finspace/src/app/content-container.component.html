@@ -17,13 +17,6 @@
 </div>
 
 <div class="container content-container" name="contentContainer">
-  <app-search-bar></app-search-bar>
-  <app-portrait-list></app-portrait-list>
-  
+    <app-search-bar (filterChanged) = "updateFilter($event)" ></app-search-bar>
+  <app-portrait-list [currentFilter] = "currentFilter"></app-portrait-list>
 </div>
-
-<!-- <router-outlet></router-outlet> -->
-
-<!-- <div name="profileListContainer" class="profile-list-container">
-        <app-portrait-component *ngFor='let picture of pictures' [imgSrc] = 'picture' [map] = 'namePictureMap'></app-portrait-component>
-    </div> -->

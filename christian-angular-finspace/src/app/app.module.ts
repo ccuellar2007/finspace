@@ -10,6 +10,7 @@ import { ProfileTextComponent } from './profile-text.component';
 import { ContentContainerComponent } from './content-container.component';
 import { ProfileComponent } from './profile.component';
 import { InterestListComponent } from './interestlist.component';
+import { RouterHelperComponent } from './router-helper.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatSelectModule } from '@angular/material';
@@ -22,7 +23,8 @@ import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatSelectMod
     ProfileTextComponent,
     ContentContainerComponent,
     ProfileComponent,
-    InterestListComponent
+    InterestListComponent,
+    RouterHelperComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +37,6 @@ import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatSelectMod
     MatSelectModule
   ],
   providers: [],
-  bootstrap: [ContentContainerComponent]
+  bootstrap: [RouterHelperComponent, ContentContainerComponent]
 })
 export class AppModule { }

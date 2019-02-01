@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ContentContainerComponent } from './content-container.component';
 import { ProfileComponent } from './profile.component';
+import { RouterHelperComponent } from './router-helper.component';
 
 const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
-  { path: '', component: ContentContainerComponent }
+  { path: '', redirectTo: 'landingPage', pathMatch: 'full'},
+  { path: 'landingPage', component: ContentContainerComponent }
 ];
 
 @NgModule({
