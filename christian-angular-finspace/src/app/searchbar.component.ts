@@ -46,6 +46,8 @@ export class SearchBarComponent {
         this.filterChanged.emit({nameFilter: this.currentSearch, marketFilter: this.marketFilter, interestFilter: this.interestFilter}); break;
       case this.MARKET_STATE:
         this.filterChanged.emit({nameFilter: this.nameFilter, marketFilter: this.currentSearch, interestFilter: this.interestFilter}); break;
+      case this.INTEREST_STATE:
+        this.filterChanged.emit({nameFilter: this.nameFilter, marketFilter: this.marketFilter, interestFilter: this.currentSearch}); break;
       default: break;
     }
     
