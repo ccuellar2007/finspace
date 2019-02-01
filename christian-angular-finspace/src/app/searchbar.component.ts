@@ -43,14 +43,22 @@ export class SearchBarComponent {
   getOptions() {
     switch (this.currentState) {
       case this.NAME_STATE:
-        this.filterChanged.emit({nameFilter: this.currentSearch, marketFilter: this.marketFilter, interestFilter: this.interestFilter}); break;
+        this.filterChanged.emit(
+          {nameFilter: this.currentSearch, marketFilter: this.marketFilter, interestFilter: this.interestFilter}
+        );
+        break;
       case this.MARKET_STATE:
-        this.filterChanged.emit({nameFilter: this.nameFilter, marketFilter: this.currentSearch, interestFilter: this.interestFilter}); break;
+        this.filterChanged.emit(
+          {nameFilter: this.nameFilter, marketFilter: this.currentSearch, interestFilter: this.interestFilter}
+        );
+        break;
       case this.INTEREST_STATE:
-        this.filterChanged.emit({nameFilter: this.nameFilter, marketFilter: this.marketFilter, interestFilter: this.currentSearch}); break;
+        this.filterChanged.emit(
+          {nameFilter: this.nameFilter, marketFilter: this.marketFilter, interestFilter: this.currentSearch}
+        );
+        break;
       default: break;
     }
-    
     return this.getOptionsNotFiltered().filter(x => x.indexOf(this.currentSearch) >= 0);
   }
   getOptionsNotFiltered() {

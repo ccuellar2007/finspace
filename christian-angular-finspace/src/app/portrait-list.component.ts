@@ -58,13 +58,19 @@ export class PortraitListComponent implements OnInit {
   filterProfiles() {
     let newFilteredProfiles = this.profiles;
     if (this.internalCurrentFilter.nameFilter !== '') {
-      newFilteredProfiles = newFilteredProfiles.filter(profile => profile.name.indexOf(this.internalCurrentFilter.nameFilter) >= 0);
+      newFilteredProfiles = newFilteredProfiles.filter(
+        profile => profile.name.indexOf(this.internalCurrentFilter.nameFilter) >= 0
+      );
     }
     if (this.internalCurrentFilter.marketFilter !== '') {
-      newFilteredProfiles = newFilteredProfiles.filter(profile => profile.market.indexOf(this.internalCurrentFilter.marketFilter) >= 0);
+      newFilteredProfiles = newFilteredProfiles.filter(
+        profile => profile.market.indexOf(this.internalCurrentFilter.marketFilter) >= 0
+      );
     }
     if (this.internalCurrentFilter.interestFilter !== '') {
-      newFilteredProfiles = newFilteredProfiles.filter(profile => this.checkInterestList(this.internalCurrentFilter.interestFilter, profile.interests));
+      newFilteredProfiles = newFilteredProfiles.filter(
+        profile => this.checkInterestList(this.internalCurrentFilter.interestFilter, profile.interests)
+      );
     }
     this.filteredProfiles = newFilteredProfiles;
   }
