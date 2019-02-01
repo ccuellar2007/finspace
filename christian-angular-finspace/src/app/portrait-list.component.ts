@@ -8,6 +8,7 @@ class Profile {
   picture: string;
   name: string;
   market: string;
+  interests: Array<string>;
 }
 @Component({
   selector: 'app-portrait-list',
@@ -16,12 +17,12 @@ class Profile {
 })
 export class PortraitListComponent implements OnInit {
   profiles = [
-    {picture: 'assets/images/_MG_6191.jpg', name: 'Christian Cuellar', market: 'SF'},
-    {picture: 'assets/images/tristan.png', name: 'Tristan Miller', market: 'Dallas'},
-    {picture: 'assets/images/bilal.png', name: 'Bilal Sattar', market: 'LA'},
-    {picture: 'assets/images/trace.png', name: 'Trace Tschida', market: 'DC'},
-    {picture: 'assets/images/joel.png', name: 'Joel Eliason', market: 'Chicago'},
-    {picture: 'assets/images/stephen.png', name: 'Stephen Godderidge', market: 'Philadelphia'}
+    {picture: 'assets/images/_MG_6191.jpg', name: 'Christian Cuellar', market: 'SF', interests: ['Basketball']},
+    {picture: 'assets/images/tristan.png', name: 'Tristan Miller', market: 'Dallas', interests: ['Fishing', 'Books']},
+    {picture: 'assets/images/bilal.png', name: 'Bilal Sattar', market: 'LA', interests: ['Basketball']},
+    {picture: 'assets/images/trace.png', name: 'Trace Tschida', market: 'DC', interests: ['Art', 'Music']},
+    {picture: 'assets/images/joel.png', name: 'Joel Eliason', market: 'Chicago', interests: ['Art']},
+    {picture: 'assets/images/stephen.png', name: 'Stephen Godderidge', market: 'Philadelphia', interests: ['Books', 'Music']}
   ];
   namePictureMap = {
     'assets/images/_MG_6191.jpg': 'Christian Cuellar',
@@ -36,31 +37,36 @@ export class PortraitListComponent implements OnInit {
   'assets/images/trace.png', 'assets/images/joel.png', 'assets/images/stephen.png'];
   private internalCurrentFilter: Filter;
   @Input() set currentFilter(value: Filter) {
-    console.log('portraitlist filter');
-    console.log(value);
     this.internalCurrentFilter = value;
     this.filterProfiles();
     this.updatePictures();
     this.updatePictureNameMap();
-    console.log(this.namePictureMap);
   }
   get currentFilter(): Filter {
     return this.internalCurrentFilter;
   }
 
+  checkInterestList(interest, interestList) {
+    let containsInterest = false;
+    interestList.forEach(i => {
+      if (i.indexOf(interest) >= 0) {
+        containsInterest = true;
+      }
+    });
+    return containsInterest;
+  }
   filterProfiles() {
     let newFilteredProfiles = this.profiles;
-    console.log('internal filter');
-    console.log(this.internalCurrentFilter);
     if (this.internalCurrentFilter.nameFilter !== '') {
       newFilteredProfiles = newFilteredProfiles.filter(profile => profile.name.indexOf(this.internalCurrentFilter.nameFilter) >= 0);
     }
     if (this.internalCurrentFilter.marketFilter !== '') {
       newFilteredProfiles = newFilteredProfiles.filter(profile => profile.market.indexOf(this.internalCurrentFilter.marketFilter) >= 0);
     }
+    if (this.internalCurrentFilter.interestFilter !== '') {
+      newFilteredProfiles = newFilteredProfiles.filter(profile => this.checkInterestList(this.internalCurrentFilter.interestFilter, profile.interests));
+    }
     this.filteredProfiles = newFilteredProfiles;
-    console.log('filteredProfiles');
-    console.log(this.filteredProfiles);
   }
 
   updatePictures() {
