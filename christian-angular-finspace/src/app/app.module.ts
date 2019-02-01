@@ -8,6 +8,8 @@ import { PortraitListComponent } from './portrait-list.component';
 import { SearchBarComponent } from './searchbar.component';
 import { ProfileTextComponent } from './profile-text.component';
 import { ContentContainerComponent } from './content-container.component';
+import { ProfileComponent } from './profile.component';
+import { InterestListComponent } from './interestlist.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatSelectModule } from '@angular/material';
@@ -18,7 +20,9 @@ import { MatButtonModule, MatCheckboxModule, MatAutocompleteModule, MatSelectMod
     PortraitListComponent,
     SearchBarComponent,
     ProfileTextComponent,
-    ContentContainerComponent
+    ContentContainerComponent,
+    ProfileComponent,
+    InterestListComponent
   ],
   imports: [
     BrowserModule,
